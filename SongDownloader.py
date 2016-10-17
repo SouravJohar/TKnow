@@ -47,7 +47,7 @@ def youtubedl(search):
     if media == "audio":
         os.system("youtube-dl -f 140 " + f_link)
     print "Downlod Complete"
-    os.system("say Download complete")
+   
 
 
 
@@ -81,7 +81,7 @@ for song in search.split(', '):
                 temp = link_[i].text.split('\n')
                 print str(i+1)+ ".", temp[2],temp[3],temp[5]
             n =int(raw_input(">"))
-            if n == 0:
+            if n ==
                     youtubedl(search)
             if n == 999:
                 continue
@@ -96,7 +96,7 @@ for song in search.split(', '):
                 print "Downloading from: \n",final_link[0], "\n\n"
                 #urllib.urlretrieve(g[0], "{}.mp3".format(names[n-1].text))
                 os.system("curl -O " + final_link[0])
-                os.system("say download complete")
+     
                 print "Download complete"
 
         else:
