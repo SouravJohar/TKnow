@@ -8,8 +8,8 @@ import urllib
 def youtubedl(search):
     media = "audio"
     url = 'https://www.youtube.com/results?search_query=' + search[:len(search)-3]
-    sc = requests.get(url)
-    soup = BeautifulSoup(sc.content, 'html.parser')
+    youtube_result = requests.get(url)
+    soup = BeautifulSoup(youtube_result.content, 'html.parser')
     title = soup.findAll('h3', {'class': 'yt-lockup-title '})
     link = []
     for i in range(len(title)):
