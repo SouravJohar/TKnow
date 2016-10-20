@@ -1,13 +1,14 @@
+import dryscrape
+import os
 import requests
 from bs4 import BeautifulSoup
-import os
-import dryscrape
 
 
-def youtubedl(search): #calling the main function of code
+def youtubedl(search):
+    # calling the main function of code
     media_type_type = "audio"
     media_url = 'https://www.youtube.com/results?search_query=' + \
-          search[:len(search)-3]
+                search[:len(search)-3]
     sc = requests.get(media_url)
     soup = BeautifulSoup(sc.content, 'html.parser')
     media_title = soup.findAll('h3', {'class': 'yt-lockup-title '})
@@ -45,12 +46,6 @@ def youtubedl(search): #calling the main function of code
         os.system("youtube-dl -f 140 " + f_link)
     print "Download Complete"
 
-
-flag = ""
-headers = {
-    "User-agent":
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36"
-}
 search = raw_input(">")
 for song in search.split(', '):
     if song[len(song) - 3:] == ' -y':
@@ -95,4 +90,4 @@ for song in search.split(', '):
                 print "Download complete"
 
         else:
-            youtubedl(search) #calling the function back 
+            youtubedl(search)  # calling the function back
