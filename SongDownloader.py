@@ -4,18 +4,18 @@ import os
 import dryscrape
 
 
-def youtubedl(search):
-    media = "audio"
-    url = 'https://www.youtube.com/results?search_query=' + \
+def youtubedl(search): #calling the main function of code
+    media_type_type = "audio"
+    media_url = 'https://www.youtube.com/results?search_query=' + \
           search[:len(search)-3]
-    sc = requests.get(url)
+    sc = requests.get(media_url)
     soup = BeautifulSoup(sc.content, 'html.parser')
-    title = soup.findAll('h3', {'class': 'yt-lockup-title '})
+    media_title = soup.findAll('h3', {'class': 'yt-lockup-title '})
     link = []
-    for i in range(len(title)):
-        link.append(title[i].find('a')['href'])
-    for i in range(len(title)):
-        print(str(i + 1) + '. ' + title[i].find('a').text)
+    for i in range(len(media_title)):
+        link.append(media_title[i].find('a')['href'])
+    for i in range(len(media_title)):
+        print(str(i + 1) + '. ' + media_title[i].find('a').text)
 
     while True:
         try:
@@ -32,16 +32,16 @@ def youtubedl(search):
     f_link = 'https://www.youtube.com' + link[user_input - 1]
 
     if search[::-1][:3] == 'v- ':
-        media = "defvideo"
+        media_type_type = "defvideo"
     if search[::-1][:3] == "r- ":
         res = ListRes(f_link)
-        media = "video"
+        media_type_type = "video"
 
-    if media == "video":
+    if media_type == "video":
         os.system("youtube-dl -f {} ".format(res) + f_link)
-    if media == "defvideo":
+    if media_type == "defvideo":
         os.system("youtube-dl " + f_link)
-    if media == "audio":
+    if media_type == "audio":
         os.system("youtube-dl -f 140 " + f_link)
     print "Download Complete"
 
@@ -95,4 +95,4 @@ for song in search.split(', '):
                 print "Download complete"
 
         else:
-            youtubedl(search)
+            youtubedl(search) #calling the function back 
