@@ -4,19 +4,22 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def youtubedl(search):
+def youtube_downloader(search):
     # calling the main function of code
     media_type_type = "audio"
     media_url = 'https://www.youtube.com/results?search_query=' + \
                 search[:len(search)-3]
-    sc = requests.get(media_url)
-    soup = BeautifulSoup(sc.content, 'html.parser')
+    media_info = requests.get(media_url)
+    soup = BeautifulSoup(media_info.content, 'html.parser')
     media_title = soup.findAll('h3', {'class': 'yt-lockup-title '})
     link = []
-    for i in range(len(media_title)):
-        link.append(media_title[i].find('a')['href'])
-    for i in range(len(media_title)):
-        print(str(i + 1) + '. ' + media_title[i].find('a').text)
+
+    for media in range(len(media_title)):
+        link.append(media_title[media].find('a')['href'])
+
+    for media_name in range(len(media_title)):
+        print(str(media_name + 1) +
+              '. ' + media_title[media_name].find('a').text)
 
     while True:
         try:
@@ -30,26 +33,27 @@ def youtubedl(search):
         except NameError:
             print('!')
             continue
-    f_link = 'https://www.youtube.com' + link[user_input - 1]
+    media_link = 'https://www.youtube.com' + link[user_input - 1]
 
     if search[::-1][:3] == 'v- ':
         media_type_type = "defvideo"
     if search[::-1][:3] == "r- ":
-        res = ListRes(f_link)
+        res = ListRes(media_link)
         media_type_type = "video"
 
     if media_type == "video":
-        os.system("youtube-dl -f {} ".format(res) + f_link)
+        os.system("youtube-dl -f {} ".format(res) + media_link)
     if media_type == "defvideo":
-        os.system("youtube-dl " + f_link)
+        os.system("youtube-dl " + media_link)
     if media_type == "audio":
-        os.system("youtube-dl -f 140 " + f_link)
+        os.system("youtube-dl -f 140 " + media_link)
     print "Download Complete"
+
 
 search = raw_input(">")
 for song in search.split(', '):
     if song[len(song) - 3:] == ' -y':
-        youtubedl(song)
+        youtube_downloader(song)
     else:
         base_url = "http://mp3brainz.cc/v1/"
         query_url = "http://mp3brainz.cc/v1/#!q=" + song
@@ -69,16 +73,16 @@ for song in search.split(', '):
             except:
                 pass
         if len(links) > 10:
-            for i in range(20):
-                temp = link_[i].text.split('\n')
-                print str(i + 1) + ".", temp[2], temp[3], temp[5]
-            n = int(raw_input(">"))
-            if n == 0:
-                youtubedl(search)
-            if n == 999:
+            for number in range(20):
+                temp = link_[number].text.split('\n')
+                print str(number + 1) + ".", temp[2], temp[3], temp[5]
+            link_number = int(raw_input(">"))
+            if link_number == 0:
+                youtube_downloader(search)
+            if link_number == 999:
                 continue
             else:
-                download = base_url + link__[n - 1]
+                download = base_url + link__[link_number - 1]
                 session2 = dryscrape.Session()
                 session2.visit(download)
                 response2 = session2.body()
@@ -90,4 +94,4 @@ for song in search.split(', '):
                 print "Download complete"
 
         else:
-            youtubedl(search)  # calling the function back
+            youtube_downloader  # calling the function back
