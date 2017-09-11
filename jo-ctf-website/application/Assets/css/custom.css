@@ -1,0 +1,149 @@
+.navbar{
+	background-color: #2B3C4E !important;
+	border: 0px !important;
+	border-radius: 0px;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+.navbar>div{
+	padding-right: 0px;
+}
+.navbar a{
+	color: #FFF !important;
+}
+.nav>li:hover{
+   background-color: #FFF;
+}
+.navbar a:hover{
+	color: #2B3C4E !important;
+}
+.header{
+	padding-right:0px;
+	padding-left: 0px;
+	padding-top: 50px;
+	padding-bottom: 30px;
+	height: 400px;
+	background-image: url("Bg-Images/background.jpg");
+	background-size: cover;
+	border-bottom: solid 5px #2B3C4E; 
+}
+.headtext{
+	background-color: rgba(0,0,0,0.5);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #FFF;
+	text-align: center;
+}
+.headtext h1{
+    font-size: 60px;
+}
+.headtext hr{
+	width: 60%;
+}
+.contwrap{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #F4FBFF;
+	border-bottom: solid 5px #2B3C4E;
+    height: auto;
+}
+.fullh{
+	height: 600px;
+}
+.content{
+	margin-bottom: 5px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-color: #FFF;
+    height: 550px;
+}
+.contimg{
+	padding: 0px;
+	height: 150px;
+}
+.contimg>img{
+	width: 100%;
+	height: 100%;
+}
+.fcontarea{
+	margin-bottom: 10px;
+}
+.fcontarea>hr{
+	border: solid 1px #2B3C4E;
+}
+.fcontarea>p{
+	height: 170px;
+}
+
+.readbtn{
+	background-color: #2B3C4E;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 2px;
+}
+.readbtn:hover{
+	text-decoration: none;
+	color: #2B3C4E;
+	border: solid 1px #2B3C4E;
+	background-color: #FFF;
+}
+.ldbtn{
+	background-color: #2B3C4E;
+	color: #FFF;
+	border: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.ldbtn:hover{
+	background-color: #FFF;
+	color: #2B3C4E;
+	border: solid 1px #2B3C4E;
+}
+.tldbtn{
+	background-color: #2B3C4E;
+	color: #FFF;
+	border: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.tldbtn:hover{
+	background-color: #FFF;
+	color: #2B3C4E;
+	border: solid 1px #2B3C4E;
+}
+.fullwin{
+	height: 700px;
+}
+.formarea{
+	margin-top: 50px;
+	padding: 30px;
+	background-color: #FFF;
+}
+.formarea h1{
+	text-align:center;
+}
+.formarea hr{
+	width: 80%;
+	border: solid 1px #2B3C4E;
+}
+.form-group{
+	padding-top: 10px;
+}
+.alertbox{
+	margin: 0px;
+	position: relative;
+}
+.fullart{
+	background-color: #FFF;
+	padding-bottom: 10px;
+}
+.fullimage{
+	width: 100%;
+	height: auto;
+}
+.dropdown-menu>li>a{
+	color: #2B3C4E !important;
+}
