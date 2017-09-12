@@ -65,14 +65,20 @@
 	width: 100%;
 	height: 100%;
 }
+.contarea{
+	margin-bottom: 10px;
+}
+.contarea>hr{
+	border: solid 1px #2B3C4E;
+}
+.contarea>p{
+	height: 170px;
+}
 .fcontarea{
 	margin-bottom: 10px;
 }
 .fcontarea>hr{
 	border: solid 1px #2B3C4E;
-}
-.fcontarea>p{
-	height: 170px;
 }
 
 .readbtn{
